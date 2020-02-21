@@ -39,7 +39,7 @@ class WeChatWindow {
   resizeWindow(isLogged, splashWindow) {
     const size = isLogged ? Common.WINDOW_SIZE : Common.WINDOW_SIZE_LOGIN;
 
-    this.wechatWindow.setResizable(isLogged);
+    this.wechatWindow.resizable = isLogged;
     this.wechatWindow.setSize(size.width, size.height);
     if (this.loginState.current === 1 - isLogged || this.loginState.current === this.loginState.WAITING) {
       splashWindow.hide();
@@ -111,7 +111,7 @@ class WeChatWindow {
   }
 
   initWindowWebContent() {
-    this.wechatWindow.webContents.setUserAgent(Common.USER_AGENT[process.platform]);
+    this.wechatWindow.webContents.userAgent = Common.USER_AGENT[process.platform];
     if (Common.DEBUG_MODE) {
       this.wechatWindow.webContents.openDevTools();
     }

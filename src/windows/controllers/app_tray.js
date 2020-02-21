@@ -44,7 +44,7 @@ class AppTray {
     } else {
       image = nativeImage.createFromPath(path.join(assetsPath, 'status_bar.png'));
     }
-    image.setTemplateImage(true);
+    image.isMacTemplateImage = true;
 
     this.tray = new Tray(image);
     this.tray.setToolTip(Common.ELECTRONIC_WECHAT);

@@ -21,6 +21,7 @@ class ElectronicWeChat {
   }
 
   init() {
+    app.allowRendererProcessReuse = true;
     if(this.checkInstance()) {
       this.initApp();
       this.initIPC();
@@ -77,7 +78,7 @@ class ElectronicWeChat {
           this.tray.setTitle('');
         }
       } else if (process.platform === "linux" || process.platform === "win32") {
-          app.setBadgeCount(num * 1);
+          app.badgeCount = num * 1;
           this.tray.setUnreadStat((num * 1 > 0)? 1 : 0);
       }
     });
