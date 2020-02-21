@@ -21,7 +21,7 @@ class UpdateHandler {
   checkForUpdate(version, silent) {
     UpdateHandler.CHECKED = true;
     const promise = new Promise((res, rej) => {
-      if (Common.ELECTRON === app.getName()) {
+      if (Common.ELECTRON === app.name) {
         rej(Common.UPDATE_ERROR_ELECTRON);
       }
       const req = https.get({
