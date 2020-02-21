@@ -111,7 +111,7 @@ class WeChatWindow {
   }
 
   initWindowWebContent() {
-    this.wechatWindow.webContents.setUserAgent(Common.USER_AGENT[process.platform]);
+    this.wechatWindow.webContents.userAgent = Common.USER_AGENT[process.platform];
     if (Common.DEBUG_MODE) {
       this.wechatWindow.webContents.openDevTools();
     }
