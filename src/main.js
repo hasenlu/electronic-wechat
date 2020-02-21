@@ -21,6 +21,7 @@ class ElectronicWeChat {
   }
 
   init() {
+    app.allowRendererProcessReuse = true;
     if(this.checkInstance()) {
       this.initApp();
       this.initIPC();
